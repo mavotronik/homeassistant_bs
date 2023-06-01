@@ -1,0 +1,4 @@
+title: Home Assistant - Балтийская слобода 
+views:
+  - !include includes/lovelace/home.yaml
+  

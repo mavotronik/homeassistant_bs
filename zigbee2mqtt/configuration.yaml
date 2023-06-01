@@ -1,0 +1,45 @@
+homeassistant: true
+advanced:
+  log_level: info
+  pan_id: 4259
+  channel: 15
+  network_key:
+    - 8
+    - 4
+    - 5
+    - 7
+    - 9
+    - 11
+    - 10
+    - 15
+    - 3
+    - 2
+    - 5
+    - 6
+    - 0
+    - 10
+    - 19
+    - 13
+  availability_blocklist: []
+  availability_passlist: []
+  last_seen: ISO_8601
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+mqtt:
+  server: mqtt://core-mosquitto:1883
+  user: mqtt
+  password: mqtt374
+serial:
+  port: /dev/ttyACM0
+frontend:
+  port: 8099
+device_options:
+  legacy: false
+devices:
+  '0xa4c1389390d077b8':
+    friendly_name: Relay 2
+  '0xa4c1387ae5e3e71f':
+    friendly_name: Relay 1
+  '0x00158d0005bdb096':
+    friendly_name: Button

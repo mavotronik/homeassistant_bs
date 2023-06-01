@@ -1,0 +1,36 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include_dir_merge_list includes/automation
+script: !include_dir_merge_named includes/scripts
+sensor: !include_dir_merge_list includes/sensors
+template: !include_dir_merge_list includes/template
+binary_sensor: !include_dir_merge_list includes/bin_sensor
+
+recorder: !include includes/recorder.yaml
+#counter: !include includes/counter.yaml
+mqtt: !include includes/mqtt.yaml
+
+
+panel_custom:
+  - name: hassio_system
+    sidebar_title: 'System'
+    sidebar_icon: mdi:wrench-outline
+    js_url: /api/hassio/app/entrypoint.js
+    url_path: 'hassio/system'
+    embed_iframe: true
+    require_admin: true
+    config:
+      ingress: core_configurator
+      
+lovelace:
+  mode: yaml

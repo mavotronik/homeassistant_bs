@@ -1,0 +1,56 @@
+title: Обзор
+icon: mdi:home
+
+cards:
+
+    - type: vertical-stack
+      title:
+      cards:
+      
+        - type: markdown
+          style: |
+              ha-card {
+                font-size: 30px;
+              }          
+          content: >
+             **Дата, время**    
+      
+        - type: entities
+          entities:
+              - entity: sensor.time
+              - entity: sensor.date
+              
+    - type: vertical-stack
+      title:
+      cards:
+      
+        - type: markdown
+          style: |
+              ha-card {
+                font-size: 30px;
+              }          
+          content: >
+             **Система**
+             
+        - type: entities
+          entities:
+              - entity: sensor.last_boot_custom
+                name: Аптайм хоста
+              - entity: sensor.uptime_custom
+                name: Аптайм Home Assistant
+
+        - type: grid
+          columns: 2
+          cards: 
+            - type: gauge
+              entity: sensor.processor_use
+              name: CPU
+            - type: gauge
+              entity: sensor.processor_temperature
+              name: Температура
+            - type: gauge
+              entity: sensor.memory_use_percent
+              name: ОЗУ
+            - type: gauge
+              entity: sensor.disk_use_percent
+              name: Диск
